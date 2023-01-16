@@ -1,13 +1,21 @@
 html {
   background-color: black;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 #container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto 16vw;
 }
 
 .lscape {
-  width: 16vw;
+  height: 15vw;
+  padding: 2vw;
+  pointer-events: none;
+  user-select: none;
 }
