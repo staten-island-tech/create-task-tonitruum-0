@@ -19,7 +19,7 @@ html {
 
 .lscape {
   height: 15vw;
-  padding: 2vw;
+  padding: 2vw; /* 
   pointer-events: none;
-  user-select: none;
+  user-select: none; */
 }
