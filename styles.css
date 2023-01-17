@@ -4,9 +4,13 @@ html {
   box-sizing: border-box;
 }
 
+#border {
+  margin: 4vw 0;
+  max-height: 100%;
+}
+
 #container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;

@@ -9,3 +9,11 @@ arr.landscapes.forEach(l => {
     selectors.container.innerHTML += `<img class="lscape" id='mtn${i}' src="${l}">`;
     console.log(selectors.container);
 });
+
+document.querySelectorAll(".lscape").forEach((l) => {
+    l.addEventListener("mouseenter", parallax)
+})
+
+function parallax(){
+    console.log(this.id);
+}
