@@ -31,7 +31,7 @@ function undo() {
 
 function makeUI() {
   //e.style.scale = 2;
-  let e = selectedLscape = event.currentTarget;
+  let e = (selectedLscape = event.currentTarget);
   e.removeEventListener("mouseenter", parallax);
   e.removeEventListener("mouseleave", undo);
   e.style.transition = ".5s ease";
@@ -46,11 +46,11 @@ function makeUI() {
   selectors.title.style.opacity = "0";
   selectors.title.style.transition = ".5s ease";
 }
-let y = 0
+let y = 0;
 function remove() {
   y++;
   event.currentTarget.remove();
-  if (y === 6){
+  if (y === 6) {
     create();
   }
 }
@@ -59,17 +59,21 @@ function create() {
   document.getElementById("title").innerHTML = "Select a house";
   selectors.title.style.opacity = "1";
   selectors.border.innerHTML += arr.html;
-  let i = 0
+  let i = 0;
   arr.houses.forEach((h) => {
     i++;
-    document.getElementById("houseSelector").innerHTML += `<img class="houses" id="hs${i}" draggable="false" src=${h}>`
-  })
+    document.getElementById(
+      "houseSelector"
+    ).innerHTML += `<img class="houses" id="hs${i}" draggable="false" src=${h}>`;
+  });
   console.log(selectedLscape);
   document.getElementById("houseSelector").appendChild(selectedLscape);
   document.querySelectorAll(".lscape").forEach((l) => {
     l.classList.add("selectedLscape");
     l.removeEventListener("click", makeUI);
     l.style.opacity = "1";
+    l.style.removeProperty("transition");
+    l.style.removeProperty("opacity");
     l.style.scale = "3";
   });
 }
