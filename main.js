@@ -1,4 +1,5 @@
 import * as arr from "./array.js";
+import * as drag from "./drag.js"
 
 let selectors = {
   container: document.getElementById("container"),
@@ -64,7 +65,7 @@ function create() {
     i++;
     document.getElementById(
       "houseSelector"
-    ).innerHTML += `<img class="houses" id="hs${i}" draggable="false" src=${h}>`;
+    ).innerHTML += `<img class="houses" id="hs${i}" draggable="true" src=${h}>`;
   });
   console.log(selectedLscape);
   document.getElementById("houseSelector").appendChild(selectedLscape);
@@ -76,4 +77,5 @@ function create() {
     l.style.removeProperty("opacity");
     l.style.scale = "3";
   });
+  drag.eventListeners();
 }
