@@ -11,8 +11,21 @@ arr.landscapes.forEach((l) => {
 
 document.querySelectorAll(".lscape").forEach((l) => {
   l.addEventListener("mouseenter", parallax);
+  l.addEventListener("mouseleave", undo);
+  l.addEventListener("click", makeUI);
 });
 
 function parallax() {
-  console.log("test");
+    let e = event.currentTarget;
+    e.style.scale = 1.5;
+    e.style.transition=".1s ease";
+}
+
+function undo() {
+    let e = event.currentTarget;
+    e.style.removeProperty("scale");
+}
+
+function makeUI() {
+    
 }
