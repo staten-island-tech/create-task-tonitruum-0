@@ -1,6 +1,5 @@
 html {
-  background-color: black;
-  overflow: hidden;
+  background-color: #131516;
   box-sizing: border-box;
 }
 
@@ -20,13 +19,26 @@ html {
 
 .lscape {
   height: 15vw;
-  padding: 2vw; /* 
-  pointer-events: none;
-  user-select: none; */
+  padding: 2vw;
+  user-select: none;
 }
 
 h1 {
   color: white;
   text-align: center;
   padding-bottom: 1vw;
+}
+
+#houseSelector {  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.houses {
+  padding: 2vw;
+  user-select: none;
+  width: 12vw;
 }

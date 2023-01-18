@@ -21,3 +21,6 @@ export let houses = [
   "./images/houses/hs11.png",
   "./images/houses/hs12.png"
 ];
+
+export let html = 
+`<div id="houseSelector"></div>`
