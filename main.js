@@ -67,6 +67,7 @@ function create() {
   console.log(selectedLscape);
   document.getElementById("houseSelector").appendChild(selectedLscape);
   document.querySelectorAll(".lscape").forEach((l) => {
+    l.classList.add("selectedLscape");
     l.removeEventListener("click", makeUI);
     l.style.opacity = "1";
     l.style.scale = "3";
