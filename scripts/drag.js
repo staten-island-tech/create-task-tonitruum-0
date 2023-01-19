@@ -1,4 +1,4 @@
-const mergeImages = require('merge-images').default;
+import mergeImages from '@merge-images';
 
 let container;
 let dragItemArr;

@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/staten-island-tech/create-task-tonitruum-0#readme",
   "dependencies": {
-    "merge-images": "^2.0.0"
+    "@merge-images": "^2.0.0"
   }
 }
