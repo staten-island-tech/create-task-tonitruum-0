@@ -147,8 +147,11 @@ function ihave800millionpower() {
     this.yCoord = yCord;
   }
   console.log(mergeArr);
-  console.log(mergeArr[0].x + scrollX, mergeArr[0].x);
-  console.log(mergeArr[0].y + scrollY, mergeArr[0].y);
+  console.log(
+    mergeArr[0].x + scrollX,
+    mergeArr[0].getBoundingClientRect().left
+  );
+  console.log(mergeArr[0].y + scrollY, mergeArr[0].getBoundingClientRect().top);
   /*  usedEl.forEach((k) => {
       console.log(k.element.id);
       if (k.element.id !== i.id) {
