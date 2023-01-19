@@ -1,5 +1,5 @@
-import mergeImages from '@merge-images';
-
+import mergeImages from "merge-images";
+console.log(mergeImages);
 let container;
 let dragItemArr;
 let dragItem;
@@ -15,15 +15,15 @@ let currentEl;
 let box;
 
 export function eventListeners() {
-  container = document.getElementById('houseSelector');
-  dragItemArr = document.querySelectorAll('.houses');
-  container.addEventListener('mousedown', dragStart, false);
-  container.addEventListener('mouseup', dragEnd, false);
-  container.addEventListener('mousemove', drag, false);
+  container = document.getElementById("houseSelector");
+  dragItemArr = document.querySelectorAll(".houses");
+  container.addEventListener("mousedown", dragStart, false);
+  container.addEventListener("mouseup", dragEnd, false);
+  container.addEventListener("mousemove", drag, false);
   document
-    .getElementById('button')
-    .addEventListener('click', ihave800millionpower);
-  box = document.querySelector('.selectedLscape').getBoundingClientRect();
+    .getElementById("button")
+    .addEventListener("click", ihave800millionpower);
+  box = document.querySelector(".selectedLscape").getBoundingClientRect();
 }
 
 function dragStart(e) {
@@ -63,7 +63,7 @@ function drag(e) {
 }
 
 function setTranslate(xPos, yPos, el) {
-  el.style.transform = 'translate3d(' + xPos + 'px, ' + yPos + 'px, 0)';
+  el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }
 
 function dragEnd() {
@@ -96,7 +96,7 @@ function dragEnd() {
       initialX = 0;
       initialY = 0;
     } else {
-      currentEl.style.removeProperty('transform');
+      currentEl.style.removeProperty("transform");
       for (let i = 0; i < usedEl.length; i++) {
         if (usedEl[i].element === currentEl) {
           usedEl.splice(i, 1);
@@ -129,11 +129,12 @@ function ihave800millionpower() {
   let mergeArr = [];
   dragItemArr.forEach((p) => {
     if (p.used === true) {
-      mergeArr.push(p.getAttribute('src'));
+      mergeArr.push(p.getAttribute("src"));
     }
-    mergeImages([box.getAttribute('src'), mergeArr]).then(
-      (b64) => (document.querySelector('img').src = b64)
-    );
+    mergeImages([
+      document.querySelector(".selectedLscape").getAttribute("src"),
+      mergeArr,
+    ]).then((b64) => (document.querySelector("img").src = b64));
   });
 
   /*  usedEl.forEach((k) => {
