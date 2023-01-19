@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/staten-island-tech/create-task-tonitruum-0/issues"
   },
-  "homepage": "https://github.com/staten-island-tech/create-task-tonitruum-0#readme"
+  "homepage": "https://github.com/staten-island-tech/create-task-tonitruum-0#readme",
+  "dependencies": {
+    "merge-images": "^2.0.0"
+  }
 }
