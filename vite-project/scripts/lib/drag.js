@@ -1,4 +1,5 @@
-import * as tree from './trees.js';
+import treeStart from './trees';
+
 let container;
 let dragItemArr;
 let dragItem;
@@ -13,7 +14,7 @@ let usedEl = [];
 let currentEl;
 let box;
 
-export function eventListeners() {
+export default function enableDrag() {
   container = document.getElementById('houseSelector');
   dragItemArr = document.querySelectorAll('.houses');
   container.addEventListener('mousedown', dragStart, false);
@@ -69,8 +70,6 @@ function dragEnd() {
   if (active) {
     console.log(usedEl);
     let house = currentEl.getBoundingClientRect();
-    //Right2 < Right1 && Left2 > Left1 && Top2 > Top1 && Bottom2 < Bottom1
-    // house 1 box 2
     if (
       box.right > house.right &&
       box.left < house.left &&
@@ -80,8 +79,6 @@ function dragEnd() {
       let seen = false;
       usedEl.forEach((h) => {
         if (h.element === currentEl) {
-          //console.log(h.element, currentEl);
-          //console.log(usedEl);
           h.xOffset = xOffset;
           h.yOffset = yOffset;
           seen = true;
@@ -107,10 +104,12 @@ function dragEnd() {
   }
 }
 
-function Used(el, xOf, yOf) {
-  this.element = el;
-  this.xOffset = xOf;
-  this.yOffset = yOf;
+class Used {
+  constructor(el, xOf, yOf) {
+    this.element = el;
+    this.xOffset = xOf;
+    this.yOffset = yOf;
+  }
 }
 
 function ihave800millionpower() {
@@ -134,10 +133,11 @@ function ihave800millionpower() {
   mergeArr.forEach((m) => {
     m.xCoord = m.getBoundingClientRect().left;
     m.yCoord = m.getBoundingClientRect().top;
+    console.log(m.xCoord, m.yCoord);
   });
   dragItemArr.forEach((k) => {
     k.remove();
   });
   dragItemArr = null;
-  tree.treeStart();
+  treeStart();
 }
