@@ -1,57 +1,66 @@
 html {
-    background-color: #131516;
-    box-sizing: border-box;
+  background-color: #131516;
+  box-sizing: border-box;
 }
 
 #border {
-    margin: 4vw 0;
-    margin-top: 3vw;
-    max-height: 100%;
+  margin: 4vw 0;
+  margin-top: 3vw;
+  max-height: 100%;
 }
 
 #container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: auto 16vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto 16vw;
 }
 
 .lscape {
-    height: 15vw;
-    padding: 2vw;
-    user-select: none;
+  height: 15vw;
+  padding: 2vw;
+  user-select: none;
 }
 
 h1 {
-    color: white;
-    text-align: center;
-    padding-bottom: 1vw;
+  color: white;
+  text-align: center;
+  padding-bottom: 1vw;
 }
 
-#houseSelector {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
+#houseSelector,
+#treeSelector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 .houses {
-    padding: 2vw;
-    user-select: none;
-    width: 12vw;
+  padding: 2vw;
+  user-select: none;
+  width: 12vw;
+}
+
+.trees {
+  align-items: center;
+  padding: 2.5vw;
+  user-select: none;
+  width: 9vw;
+  height: ;
 }
 
 .selectedLscape {
-    position: absolute;
-    bottom: 15%;
-    max-height: 25vh;
-    z-index: -1;
-    align-items: center;
-    margin: 0 auto;
-    bottom: 15%;
-    left: 0;
-    right: 0;
+  position: absolute;
+  bottom: 15%;
+  max-height: 25vh;
+  z-index: -1;
+  align-items: center;
+  margin: 0 auto;
+  bottom: 15%;
+  left: 0;
+  right: 0;
 }
