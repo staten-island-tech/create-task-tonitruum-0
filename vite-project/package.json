@@ -14,5 +14,9 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "merge-images": "^2.0.0"
+  }
 }
