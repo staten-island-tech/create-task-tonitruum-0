@@ -138,13 +138,14 @@ function ihave800millionpower() {
     k.remove();
   });
   dragItemArr = null;
-  treeStart(mergeArr);
+  treeStart();
   placeItems(mergeArr);
 }
 
 function placeItems(arr) {
   if (arr) {
     arr.forEach((m) => {
+      console.log(m);
       m.style.removeProperty('transform');
       selectors.border.appendChild(m);
       m.style.position = 'absolute';
