@@ -1,6 +1,6 @@
-import selectors from './selectors';
-import enableDrag from './drag.js';
-import * as arr from './array.js';
+import selectors from "./selectors";
+import enableDrag from "./drag.js";
+import * as arr from "./array.js";
 
 let selectedLscape;
 
@@ -12,8 +12,8 @@ export default function createInterface({
   buttonExists,
   className,
 }) {
-  document.getElementById('title').innerHTML = title;
-  selectors.title.style.opacity = '1';
+  document.getElementById("title").innerHTML = title;
+  selectors.title.style.opacity = "1";
   selectors.border.innerHTML += arr.html;
 
   inputArr.forEach((h, i) => {
@@ -22,22 +22,22 @@ export default function createInterface({
     }" draggable="false" src=${h}>`;
   });
   document.getElementById(contID).parentNode.append(selectedLscape);
-  document.querySelectorAll('.lscape').forEach((l) => {
-    l.classList.add('selectedLscape');
-    l.removeEventListener('click', makeUI);
-    l.style.opacity = '1';
-    l.style.removeProperty('transition');
-    l.style.removeProperty('opacity');
-    l.style.scale = '3';
+  document.querySelectorAll(".lscape").forEach((l) => {
+    l.classList.add("selectedLscape");
+    l.removeEventListener("click", makeUI);
+    l.style.opacity = "1";
+    l.style.removeProperty("transition");
+    l.style.removeProperty("opacity");
+    l.style.scale = "3";
   });
 
   if (buttonExists) {
     document
-      .querySelector('.selectedLscape')
-      .insertAdjacentHTML('afterend', `<button id="button">test</button>`);
+      .querySelector(".selectedLscape")
+      .insertAdjacentHTML("afterend", `<button id="button">test</button>`);
     document
-      .querySelector('.selectedLscape')
-      .insertAdjacentHTML('afterend', `<button id="button1">print</button>`);
+      .querySelector(".selectedLscape")
+      .insertAdjacentHTML("afterend", `<button id="button1">print</button>`);
   }
   enableDrag(contID, className);
 }
@@ -45,29 +45,29 @@ export default function createInterface({
 export function parallax(e) {
   const hoveredImg = e.currentTarget;
   hoveredImg.style.scale = 1.5;
-  hoveredImg.style.transition = '.1s ease';
+  hoveredImg.style.transition = ".1s ease";
 }
 
 export function unhoverImg(e) {
   const hoveredImg = e.currentTarget;
-  hoveredImg.style.removeProperty('scale');
+  hoveredImg.style.removeProperty("scale");
 }
 
 export function makeUI(e) {
   selectedLscape = e.currentTarget;
   const selectedImg = e.currentTarget;
-  selectedImg.removeEventListener('mouseenter', parallax);
-  selectedImg.removeEventListener('mouseleave', unhoverImg);
-  selectedImg.style.transition = '.5s ease';
-  document.querySelectorAll('.lscape').forEach((l) => {
-    l.removeEventListener('mouseenter', parallax);
-    l.removeEventListener('mouseleave', unhoverImg);
-    l.style.opacity = '0';
-    l.style.transition = '.5s ease';
-    l.addEventListener('transitionend', clearInitialUI);
+  selectedImg.removeEventListener("mouseenter", parallax);
+  selectedImg.removeEventListener("mouseleave", unhoverImg);
+  selectedImg.style.transition = ".5s ease";
+  document.querySelectorAll(".lscape").forEach((l) => {
+    l.removeEventListener("mouseenter", parallax);
+    l.removeEventListener("mouseleave", unhoverImg);
+    l.style.opacity = "0";
+    l.style.transition = ".5s ease";
+    l.addEventListener("transitionend", clearInitialUI);
   });
-  selectors.title.style.opacity = '0';
-  selectors.title.style.transition = '.5s ease';
+  selectors.title.style.opacity = "0";
+  selectors.title.style.transition = ".5s ease";
 }
 
 let y = 0;
@@ -76,12 +76,12 @@ function clearInitialUI(e) {
   e.currentTarget.remove();
   if (y === 6) {
     createInterface({
-      title: 'Select a house',
+      title: "Select a house",
       inputArr: arr.houses,
-      contID: 'houseSelector',
-      identifier: 'hs',
+      contID: "houseSelector",
+      identifier: "hs",
       buttonExists: true,
-      className: 'houses',
+      className: "houses",
     });
   }
 }

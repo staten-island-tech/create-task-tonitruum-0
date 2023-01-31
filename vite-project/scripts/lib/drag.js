@@ -1,5 +1,5 @@
-import treeStart from './trees';
-import selectors from './selectors';
+import treeStart from "./trees";
+import selectors from "./selectors";
 
 let container;
 let dragItemArr;
@@ -17,14 +17,14 @@ let box;
 
 export default function enableDrag(containerID, targetClass) {
   container = document.getElementById(containerID);
-  dragItemArr = document.querySelectorAll('.' + targetClass);
-  container.addEventListener('mousedown', dragStart, false);
-  container.addEventListener('mouseup', dragEnd, false);
-  container.addEventListener('mousemove', drag, false);
+  dragItemArr = document.querySelectorAll("." + targetClass);
+  container.addEventListener("mousedown", dragStart, false);
+  container.addEventListener("mouseup", dragEnd, false);
+  container.addEventListener("mousemove", drag, false);
   document
-    .getElementById('button')
-    .addEventListener('click', ihave800millionpower);
-  box = document.querySelector('.selectedLscape').getBoundingClientRect();
+    .getElementById("button")
+    .addEventListener("click", ihave800millionpower);
+  box = document.querySelector(".selectedLscape").getBoundingClientRect();
 }
 
 function dragStart(e) {
@@ -64,7 +64,7 @@ function drag(e) {
 }
 
 function setTranslate(xPos, yPos, el) {
-  el.style.transform = 'translate3d(' + xPos + 'px, ' + yPos + 'px, 0)';
+  el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }
 
 function dragEnd() {
@@ -92,7 +92,7 @@ function dragEnd() {
       initialX = 0;
       initialY = 0;
     } else {
-      currentEl.style.removeProperty('transform');
+      currentEl.style.removeProperty("transform");
       for (let i = 0; i < usedEl.length; i++) {
         if (usedEl[i].element === currentEl) {
           usedEl.splice(i, 1);
@@ -138,19 +138,20 @@ function ihave800millionpower() {
     k.remove();
   });
   dragItemArr = null;
-  treeStart();
   placeItems(mergeArr);
+  treeStart();
 }
 
 function placeItems(arr) {
   if (arr) {
+    console.log(arr);
     arr.forEach((m) => {
       console.log(m);
-      m.style.removeProperty('transform');
+      m.style.removeProperty("transform");
       selectors.border.appendChild(m);
-      m.style.position = 'absolute';
-      m.style.top = m.yCoord + 'px';
-      m.style.left = m.xCoord + 'px';
+      m.style.position = "absolute";
+      m.style.top = m.yCoord + "px";
+      m.style.left = m.xCoord + "px";
     });
   }
 }
