@@ -21,15 +21,17 @@ export default function createInterface({
       identifier + i
     }" draggable="false" src=${h}>`;
   });
-  document.getElementById(contID).parentNode.append(selectedLscape);
-  document.querySelectorAll(".lscape").forEach((l) => {
-    l.classList.add("selectedLscape");
-    l.removeEventListener("click", makeUI);
-    l.style.opacity = "1";
-    l.style.removeProperty("transition");
-    l.style.removeProperty("opacity");
-    l.style.scale = "3";
-  });
+  if (buttonExists) {
+    document.getElementById(contID).parentNode.append(selectedLscape);
+    document.querySelectorAll(".lscape").forEach((l) => {
+      l.classList.add("selectedLscape");
+      l.removeEventListener("click", makeUI);
+      l.style.opacity = "1";
+      l.style.removeProperty("transition");
+      l.style.removeProperty("opacity");
+      l.style.scale = "3";
+    });
+  }
 
   if (buttonExists) {
     document

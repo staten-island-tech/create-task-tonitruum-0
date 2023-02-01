@@ -23,8 +23,7 @@ export default function treeStart() {
 }
 
 function test() {
-  html2canvas(document.body).then(function (canvas) {
-    document.body.innerHTML = "";
+  html2canvas(document.getElementById("test")).then(function (canvas) {
     document.body.appendChild(canvas);
   });
 }
