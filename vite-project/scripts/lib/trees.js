@@ -5,7 +5,6 @@ import selectors from "./selectors.js";
 
 let ran = false;
 export default function treeStart() {
-  console.log(ran);
   if (!ran) {
     document.getElementById("houseSelector").id = "treeSelector";
     createInterface({
@@ -23,7 +22,7 @@ export default function treeStart() {
 }
 
 function test() {
-  html2canvas(document.getElementById("test")).then(function (canvas) {
+  html2canvas(document.body).then(function (canvas) {
     document.body.appendChild(canvas);
   });
 }

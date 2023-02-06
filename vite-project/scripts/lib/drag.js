@@ -144,11 +144,9 @@ function ihave800millionpower() {
 
 function placeItems(arr) {
   if (arr) {
-    console.log(arr);
     arr.forEach((m) => {
-      console.log(m);
       m.style.removeProperty("transform");
-      selectors.border.appendChild(m);
+      document.getElementById("merge").append(m);
       m.style.position = "absolute";
       m.style.top = m.yCoord + "px";
       m.style.left = m.xCoord + "px";

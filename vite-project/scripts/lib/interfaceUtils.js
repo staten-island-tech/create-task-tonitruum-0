@@ -22,7 +22,7 @@ export default function createInterface({
     }" draggable="false" src=${h}>`;
   });
   if (buttonExists) {
-    document.getElementById(contID).parentNode.append(selectedLscape);
+    document.getElementById("merge").append(selectedLscape);
     document.querySelectorAll(".lscape").forEach((l) => {
       l.classList.add("selectedLscape");
       l.removeEventListener("click", makeUI);
@@ -35,10 +35,10 @@ export default function createInterface({
 
   if (buttonExists) {
     document
-      .querySelector(".selectedLscape")
+      .getElementById("border")
       .insertAdjacentHTML("afterend", `<button id="button">test</button>`);
     document
-      .querySelector(".selectedLscape")
+      .getElementById("border")
       .insertAdjacentHTML("afterend", `<button id="button1">print</button>`);
   }
   enableDrag(contID, className);
