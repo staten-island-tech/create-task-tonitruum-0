@@ -22,7 +22,10 @@ export default function treeStart() {
 }
 
 function test() {
+  document.getElementById("button").remove();
+  document.getElementById("title").remove();
   html2canvas(document.body).then(function (canvas) {
     document.body.appendChild(canvas);
   });
+  document.getElementById("merge").remove();
 }

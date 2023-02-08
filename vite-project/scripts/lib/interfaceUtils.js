@@ -34,12 +34,10 @@ export default function createInterface({
   }
 
   if (buttonExists) {
-    document
-      .getElementById("border")
-      .insertAdjacentHTML("afterend", `<button id="button">test</button>`);
-    document
-      .getElementById("border")
-      .insertAdjacentHTML("afterend", `<button id="button1">print</button>`);
+    document.body.insertAdjacentHTML(
+      "beforeend",
+      `<button id="button">Next</button>`
+    );
   }
   enableDrag(contID, className);
 }
