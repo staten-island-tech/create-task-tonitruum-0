@@ -25,7 +25,9 @@ function test() {
   document.getElementById("button").remove();
   document.getElementById("title").remove();
   html2canvas(document.body).then(function (canvas) {
+    canvas.id = "canvasID";
     document.body.appendChild(canvas);
   });
   document.getElementById("merge").remove();
+  console.log(document.querySelector("canvasID"));
 }

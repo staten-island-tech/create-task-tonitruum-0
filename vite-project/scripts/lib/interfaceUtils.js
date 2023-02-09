@@ -38,6 +38,8 @@ export default function createInterface({
       "beforeend",
       `<button id="button">Next</button>`
     );
+  } else {
+    document.getElementById("button").textContent = "Save";
   }
   enableDrag(contID, className);
 }
